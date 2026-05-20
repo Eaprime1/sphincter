@@ -1,52 +1,81 @@
-# Prima Terminal — Template
+# Sphincter — Prima Terminal Concept
 
-A living template for building **prima terminal** concepts: RPG-style, quest-driven terminal environments where the journey through the command line is the point.
+Sphincter is a quest-driven terminal concept repository. It turns command-line work into a structured path: bootstrap, enter the world, complete quests, and validate progress.
 
-## What Is a Prima Terminal?
+## Start Here
 
-A prima terminal is a **concept repo** — a seed-and-quest package that transforms a bare terminal session into a structured, story-driven experience. It defines a world, gives the user quests, and guides them through building real skills and real tools.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Eaprime1/sphincter.git
+   cd sphincter
+   ```
+2. Bootstrap the environment:
+   ```bash
+   bash seeds/bootstrap.sh
+   source ~/.prima-env
+   ```
+3. Start the first quest:
+   ```bash
+   cat quests/000-thee-the-door.md
+   ```
+4. Run baseline validation:
+   ```bash
+   bash tools/prime_check.sh
+   bash tools/scan_lexeme.sh .
+   ```
 
-It does **not** bundle a terminal emulator. The runtime (Termux, bash, zsh, whatever the platform provides) lives at the system layer. This repo is the concept riding on top of it.
+## Documentation Index
 
+| Area | Purpose | Entry |
+|---|---|---|
+| Getting started | Full onboarding walkthrough | [guides/getting-started.md](guides/getting-started.md) |
+| Seeds / setup | Bootstrap behavior, packages, dotfiles | [seeds/README.md](seeds/README.md) |
+| First quest | Concept naming and first actions | [quests/000-thee-the-door.md](quests/000-thee-the-door.md) |
+| Quests | Quest structure and arc management | [quests/README.md](quests/README.md) |
+| World | Lore and conceptual setting | [world/README.md](world/README.md) |
+| Intake | THEE/YOD/EMBER intake flow | [intake/README.md](intake/README.md) |
+| Validation checks | Prime state and lexeme scan checks | [tools/prime_check.sh](tools/prime_check.sh), [tools/scan_lexeme.sh](tools/scan_lexeme.sh) |
+
+## Setup Validation
+
+Run these checks after setup and before opening a PR:
+
+```bash
+bash tools/prime_check.sh
+bash tools/scan_lexeme.sh <path>
 ```
-[ Termux / system terminal ]   ← runtime engine (installed on device, not in this repo)
-        ↕
-    [ Unexusi ]                ← identity + connection layer
-        ↕
-[ Prima Terminal Concept ]     ← this repo: quests, seeds, guides, world
+
+Example for this repository root:
+
+```bash
+bash tools/scan_lexeme.sh .
 ```
 
-## Repo Structure
+Done checklist:
 
-```
-prima.yaml          concept manifest — name, version, runtime requirements
-quests/             RPG-style quest definitions (real tasks, real outcomes)
-seeds/              bootstrap scripts, dotfiles, package lists
-guides/             lore-woven practical documentation
-world/              setting, lore, factions — the conceptual "place"
-unexusi/            connection spec for the Unexusi identity layer
-```
+- [ ] `bash seeds/bootstrap.sh` completed successfully
+- [ ] `source ~/.prima-env` loaded without error
+- [ ] `quests/000-thee-the-door.md` reviewed and started
+- [ ] `bash tools/prime_check.sh` passes
+- [ ] `bash tools/scan_lexeme.sh .` reviewed and intentional placeholders addressed
 
-## How to Fork This Template
+## Project Space Ownership
 
-1. Fork or use this repo as a GitHub template.
-2. Edit `prima.yaml` — give the concept its name, theme, and runtime requirements.
-3. Write the `world/` — who lives here, what this place is.
-4. Build out `quests/` — start with the awakening quest, then grow.
-5. Fill `seeds/` — dotfiles, packages, bootstrap scripts the concept needs.
-6. Write `guides/` — practical docs written as if they belong to the world.
-7. Define `unexusi/connect.yaml` — how users authenticate and carry their state.
+- `quests/`: add or evolve quest arcs and completion checks
+- `guides/`: improve onboarding and practical how-to documentation
+- `seeds/`: maintain bootstrap logic, package definitions, and dotfiles
+- `world/`: maintain lore and conceptual framing
+- `intake/`: maintain capture and triage flow for incoming fragments
 
-## Quest Design Philosophy
+## Repository Maturity Roadmap
 
-Quests are **real work with narrative framing**, not tutorials disguised as stories.
-
-- A quest teaches a skill by requiring its actual use.
-- Completion has a verifiable outcome: a file exists, a script runs, a tool works.
-- Multiple members can contribute quests — the format is a contract, not a script.
-
-See `quests/QUEST_SCHEMA.md` for the full spec.
+- [ ] **Phase 1 — Onboarding + setup cleanup**  
+      Keep startup flow current and remove stale setup friction.
+- [ ] **Phase 2 — Content consistency (quests/world/guides)**  
+      Align quest progression, lore, and practical docs into one coherent path.
+- [ ] **Phase 3 — Automation polish**  
+      Strengthen repeatable checks and contribution hygiene across PRs.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Multiple members can fill in quests, guides, world lore, and seeds — the template structure is designed for collaborative expansion.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution workflow and PR expectations.

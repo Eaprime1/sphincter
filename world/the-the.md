@@ -85,7 +85,7 @@ inherits this mystery.
 
 `prima.yaml` begins with:  
 ```
-name: "My Prima Terminal"
+name: "Sphincter"
 ```
 
 That *My* — that *the* hiding inside ownership —  

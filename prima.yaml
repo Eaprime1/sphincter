@@ -1,23 +1,27 @@
-# prima.yaml — Concept Manifest
-# Fill this in when you fork the template.
-# Run: bash tools/scan_lexeme.sh to find unfilled placeholders.
+# prima.yaml — Concept Manifest for sphincter
+# Run: bash tools/scan_lexeme.sh to surface unresolved placeholders.
 
 concept:
-  name: "My Prima Terminal"        # display name of this concept
-  slug: "my-prima-terminal"        # url-safe identifier, no spaces
+  name: "Sphincter"
+  slug: "sphincter"
   version: "0.1.0"
-  tagline: "One line that says what this world is."
-  theme: "general"                 # e.g. unix, networking, coding, creative, survival
+  tagline: "A quest-driven terminal space that turns fragments into focused action."
+  theme: "systems"
 
 author:
-  handle: ""                       # your handle / team name
-  contact: ""                      # optional — email, url, or @handle
+  handle: "Eaprime1"
+  contact: "@Eaprime1"
 
 runtime:
-  platform: "termux"               # termux | linux | macos | any
-  min_android_api: 24              # Termux only — omit for other platforms
-  required_packages: []
-  optional_packages: []
+  platform: "any"
+  min_android_api: 24
+  required_packages:
+    - git
+    - curl
+  optional_packages:
+    - vim
+    - python
+    - openssh
 
 unexusi:
   profile_version: "1.0"
