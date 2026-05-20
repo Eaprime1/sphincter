@@ -13,7 +13,7 @@ The `sphincter/` layer is the **origo** zone in THE/UNEXUS: everything upstream 
 - Exordium mechanics (entrance-under-tension)
 - Waterfall edge crossing (swallowing event)
 - Pre-vector concept states (`empty_vector`)
-- Wisp behavior as not_things before resolved interaction
+- Wisp behavior as `not_thing` before resolved interaction
 
 ## Relationship in Stack
 
