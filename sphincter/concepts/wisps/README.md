@@ -1,3 +1,3 @@
 # wisps
 
-Not_things awaiting interaction conditions that can momentarily resolve as winks.
+not_thing awaiting interaction conditions that can momentarily resolve as winks.
