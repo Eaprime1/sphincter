@@ -5,5 +5,5 @@ The waterfall edge is the swallowing threshold: the point where approach momentu
 ## Properties
 
 - Crossing is a consequence of pressure differential, not a violent override.
-- The edge marks no-conventional-return for pre-ingestion state.
+- The edge marks the point of no conventional return for the pre-ingestion state.
 - Material enters with unresolved tension and receives vectoring through Sphincter mechanics.
