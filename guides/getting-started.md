@@ -90,7 +90,9 @@ echo "Completed quests/000-thee-the-door.md — $(date)" >> ~/prima-log.txt
 
 | Symptom | Likely cause | Resolution |
 |---|---|---|
-| `pkg: command not found` in Termux | Outdated or mismatched shell environment | Run `pkg update && pkg upgrade` and retry `bash seeds/bootstrap.sh` |
+91:| Symptom | Likely cause | Resolution |
+92:|---|---|---|
+93:| `pkg: command not found` | Environment lacks `pkg` | Install required packages (`git`, `curl`) manually via `apt` or your system manager, then rerun `bash seeds/bootstrap.sh` |
 | `apt-get: command not found` | Non-Debian Linux or limited environment | Install required packages (`git`, `curl`) manually, then rerun bootstrap |
 | `No supported package manager found` warning | Platform without `pkg`/`apt-get` | Install required packages manually; bootstrap can still set dotfiles and `.prima-env` |
 | A package fails to install | Package unavailable on platform | Continue with core required packages; treat unavailable optional packages as non-blocking |
