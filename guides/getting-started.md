@@ -1,24 +1,35 @@
 # Getting Started
 
-*Replace the italicized lore sections below with narrative that fits your world.*
-
----
-
-*The terminal has always been here. Most people walk past it. You stopped.*
-
 Welcome. This guide gets you from zero to your first quest in one session.
+
+## Supported Environments
+
+| Environment | Package manager path used by `seeds/bootstrap.sh` | Notes |
+|---|---|---|
+| Termux (Android) | `pkg install -y ...` | Recommended baseline |
+| Debian/Ubuntu-like Linux | `apt-get install -y ...` | Supported when `apt-get` is available |
+| macOS / other shells | none (manual package install) | Bootstrap still configures dotfiles and `.prima-env`, but package install is skipped unless you install dependencies manually |
 
 ## Prerequisites
 
-- A working terminal session (Termux on Android, or any Linux/macOS shell)
-- `git` installed
-- Internet access for the initial bootstrap
+- `git`
+- Internet access for initial package bootstrap
+- A shell session (Termux, bash, zsh, etc.)
 
-## Step 1 — Clone the Concept
+Required packages (from `seeds/packages.yaml`):
+- `git`
+- `curl`
+
+Optional packages:
+- `vim`
+- `python`
+- `openssh`
+
+## Step 1 — Clone Sphincter
 
 ```bash
-git clone <your-concept-repo-url>
-cd <your-concept-slug>
+git clone <your-fork-url>
+cd <your-repo-name>
 ```
 
 ## Step 2 — Bootstrap the Environment
@@ -30,11 +41,16 @@ bash seeds/bootstrap.sh
 This installs required packages and sets up your environment marker. It is
 idempotent — run it again any time something seems off.
 
-Reload your shell after bootstrap:
+Load your environment marker after bootstrap:
 
 ```bash
 source ~/.prima-env
 ```
+
+Expected bootstrap outcomes:
+- Required packages are installed via detected package manager (or skipped with a warning when unavailable).
+- Dotfiles in `seeds/dotfiles/` are copied into `~/` only when missing.
+- `~/.prima-env` exists with `PRIMA_CONCEPT`, `PRIMA_VERSION`, and `PRIMA_ROOT`.
 
 ## Step 3 — Read the World
 
@@ -50,31 +66,34 @@ cat world/lore.md
 Open your first quest:
 
 ```bash
-cat quests/example/001-awakening.md
+cat quests/000-thee-the-door.md
 ```
 
 Read the lore section. Then follow the tasks. Then run the completion check.
 
-## Step 5 — Record Your Progress
-
-The concept does not track your progress automatically — you do.
-Keep a log file in your home directory:
+## Step 5 — Validate Setup
 
 ```bash
-echo "Completed example/001-awakening — $(date)" >> ~/prima-log.txt
+bash tools/prime_check.sh
+bash tools/scan_lexeme.sh .
 ```
 
-As the concept grows, a proper progress tracker will appear in `unexusi/`.
+## Step 6 — Record Your Progress
+
+Sphincter does not auto-track your path yet. Keep a local log:
+
+```bash
+echo "Completed quests/000-thee-the-door.md — $(date)" >> ~/prima-log.txt
+```
 
 ## Troubleshooting
 
-**Bootstrap fails on Termux:**
-Make sure Termux is up to date: `pkg upgrade`
-
-**A package won't install:**
-Check `seeds/packages.yaml` — some optional packages may not be available
-on your platform. Skip them and continue.
-
-**A quest's completion check fails unexpectedly:**
-Read the quest's hints section. If you are genuinely stuck, that is
-feedback — open an issue or contribute a better hint.
+| Symptom | Likely cause | Resolution |
+|---|---|---|
+91:| Symptom | Likely cause | Resolution |
+92:|---|---|---|
+93:| `pkg: command not found` | Environment lacks `pkg` | Install required packages (`git`, `curl`) manually via `apt` or your system manager, then rerun `bash seeds/bootstrap.sh` |
+| `apt-get: command not found` | Non-Debian Linux or limited environment | Install required packages (`git`, `curl`) manually, then rerun bootstrap |
+| `No supported package manager found` warning | Platform without `pkg`/`apt-get` | Install required packages manually; bootstrap can still set dotfiles and `.prima-env` |
+| A package fails to install | Package unavailable on platform | Continue with core required packages; treat unavailable optional packages as non-blocking |
+| Quest completion check fails unexpectedly | Incomplete objective or mismatch in expected files | Re-open the quest and follow its completion-check command exactly; if still blocked, open an issue |

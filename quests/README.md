@@ -6,10 +6,11 @@ This folder contains all quests for the prima terminal concept.
 
 ```
 quests/
+  000-thee-the-door.md ← initiation quest — set identity and open the door
   QUEST_SCHEMA.md      ← the quest format spec (read this first)
   example/             ← starter arc — ships with the template
     001-awakening.md   ← the first quest every player receives
-  <your-arc>/          ← add new arcs here as folders
+  <arc-name>/          ← add new arcs here as folders
 ```
 
 ## Contributing a Quest
@@ -24,6 +25,7 @@ quests/
 
 | Arc | Description | Quest Count |
 |---|---|---|
-| example | Template starter arc — replace with your first real arc | 1 |
+| root | Initiation entrypoint (`000-thee-the-door.md`) | 1 |
+| example | Starter arc available after quest 000 | 1 |
 
 Update this table as arcs are added.

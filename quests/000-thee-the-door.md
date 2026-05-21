@@ -30,9 +30,9 @@ Name this concept. Give it its first mark. Open the door.
 ## Completion Check
 
 ```bash
-grep -q 'name: "My Prima Terminal"' prima.yaml \
-  && echo "INCOMPLETE — name not set" \
-  || echo "Quest 000 complete — THEE opened the door"
+grep -q '^  name: "Sphincter"$' prima.yaml \
+  && echo "Quest 000 complete — THEE opened the door" \
+  || echo "INCOMPLETE — name not set"
 ```
 
 ## What Opens Next
