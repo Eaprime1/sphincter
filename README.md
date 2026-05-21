@@ -57,7 +57,9 @@ Done checklist:
 - [ ] `source ~/.prima-env` loaded without error
 - [ ] `quests/000-thee-the-door.md` reviewed and started
 - [ ] `bash tools/prime_check.sh` passes
-- [ ] `bash tools/scan_lexeme.sh .` reviewed and intentional placeholders addressed
+# Sphincter 🍥 — Prima Terminal Concept
+
+Sphincter is a quest-driven terminal concept repository. It turns command-line work into a structured path: bootstrap, enter the world, complete quests, and validate progress.
 
 ## Project Space Ownership
 
