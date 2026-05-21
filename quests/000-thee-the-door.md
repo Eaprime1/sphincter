@@ -31,8 +31,8 @@ Name this concept. Give it its first mark. Open the door.
 
 ```bash
 grep -q '^  name: "Sphincter"$' prima.yaml \
-  && echo "INCOMPLETE — name not set" \
-  || echo "Quest 000 complete — THEE opened the door"
+  && echo "Quest 000 complete — THEE opened the door" \
+  || echo "INCOMPLETE — name not set"
 ```
 
 ## What Opens Next
