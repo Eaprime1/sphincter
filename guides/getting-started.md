@@ -28,8 +28,8 @@ Optional packages:
 ## Step 1 — Clone Sphincter
 
 ```bash
-git clone https://github.com/Eaprime1/sphincter.git
-cd sphincter
+git clone <your-fork-url>
+cd <your-repo-name>
 ```
 
 ## Step 2 — Bootstrap the Environment
