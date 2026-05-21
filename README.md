@@ -6,8 +6,8 @@ Sphincter is a quest-driven terminal concept repository. It turns command-line w
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Eaprime1/sphincter.git
-   cd sphincter
+   git clone <your-fork-url>
+   cd <your-repo-name>
    ```
 2. Bootstrap the environment:
    ```bash
